@@ -24,7 +24,7 @@ guide rails and lead screw setup to drive the joint. `J-Axis` joint don’t have
 
 ## Configuration
 A modified version of Merlin 3D printer firmware for rotating bed based printers,[Marlin 360 Firmware](https://github.com/kory75/Marlin_360) was used to run the robot. Marlin firmware is mainly configured to 3-aixs 3D printers, To work with 5-axis manipulator, there have to do some configuration and modification to the firmware, Specifically both extruders were configured to run two rotary axis on tool head. The marlin firmware for polar coordinates works mainly with `X` and `Y` coordinates. The `Z` coordinates that receive from the G-code (Geometric Code) works independently with the `Z` axis. But the `X` and `Y` coordinates that the marlin firmware gets from the G-code sender is a cartesian coordinate system that represented by `X` and `Y` value. In the polar coordinating system using `𝑅_360(𝑋_𝐴𝑋𝐼𝑆)` and `𝑅(𝑌_𝐴𝑋𝐼𝑆)` coordinating values to move the axis motors and use to represent the `X` and `Y` cartesian coordinates.
-`R_360(𝑋_𝐴𝑋𝐼𝑆)` and `𝑅(𝑌_𝐴𝑋𝐼𝑆)` values are calculated from the cartesian coordinates, from a Gcode if needed. From the centre point of the working table or the bed of the machine `(x_0, y_0)` have to move at an angle of $\alpha$ to and the tool head have to move a difference in the radial direction `R` the machine. from the current orientation to destination orientation, the angle difference $\alpha$ can be get by,
+`R_360(𝑋_𝐴𝑋𝐼𝑆)` and `𝑅(𝑌_𝐴𝑋𝐼𝑆)` values are calculated from the cartesian coordinates, from a Gcode if needed. From the centre point of the working table or the bed of the machine `(x_0, y_0)` have to move at an angle of `$\alpha$` to and the tool head have to move a difference in the radial direction `R` the machine. from the current orientation to destination orientation, the angle difference `$\alpha$` can be get by,
 $\alpha=\arctan\left(\frac{\text{destination}[Y]}{\text{destination}[X]}\right)-\arctan\left(\frac{\text{current}_{\text{cartesian}}[Y]}{\text{current}_{\text{cartesian}}[X]}\right)$
 Radial distance `x_diff` difference can get by, 
 $x_{\text{diff}} =
@@ -32,7 +32,7 @@ $x_{\text{diff}} =
 Updating the rotary systems's `X-axis` length,
 $R_{360}(X\_{\text{AXIS}}) = R_{360}(X\_{\text{AXIS}}) + x_{\text{diff}}$
 Using outer radius to compute new `Y` position, 
-$\text{new\_target\_y} =(R_{360\_\text{OUTER\_RADIUS}} \cdot \alpha)+r_{360}[Y\_{\text{AXIS}}]$
+$new_{target_y} =(R_{360\_\text{OUTER\_RADIUS}} \cdot \alpha)+r_{360}[Y\_{\text{AXIS}}]$
 Also, steps per units were calculated as,
 $\text{DEFAULT\_AXIS\_STEPS\_PER\_UNIT}(Y_{\text{AXIS}})=\frac{R_{360\_\text{STEPS\_PER\_ROTATION}}}{y_{\text{length}}}$
 This steps per units for the `y-axis` have to be very precise otherwise the output will be not as expected. so the default settings on marlin firmware need to override by this. 
