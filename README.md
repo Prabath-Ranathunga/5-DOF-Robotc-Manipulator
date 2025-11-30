@@ -2,7 +2,7 @@
 
 This repository contains the research, design, and implementation of a compact 5-degree-of-freedom (DOF) robotic manipulator. The project focuses on the complete development lifecycle, from initial design and simulation to the physical implementation and control of the robotic arm, making it suitable for rapid prototyping, research, and light-duty material handling applications.
 
-![alt text](https://github.com/Prabath-Ranathunga/5-DOF-Robotc-Manipulator/tree/main//common/images/final_v44.png "Robot final prototype design")
+`![alt text](https://github.com/Prabath-Ranathunga/5-DOF-Robotc-Manipulator/tree/main//common/images/final_v44.png "Robot final prototype design")`
 
 ## Little bit about project:
 The development of a 5-DOF robotic manipulator, designed for versatility and precision in a compact form factor. The project encompasses the mechanical design using 3D-printed components to keep the manufacturing cost of this as low as possible. The manipulator's performance is validated through extensive simulation and a physical prototype, demonstrating its capabilities in tasks such as pick-and-place operations and path following. The results establish it as a viable and accessible platform for academic research, educational purposes, and light-duty industrial automation.
