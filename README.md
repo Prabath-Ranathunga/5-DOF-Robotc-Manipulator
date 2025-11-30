@@ -2,6 +2,8 @@
 
 This repository contains the research, design, and implementation of a compact 5-degree-of-freedom (DOF) robotic manipulator. The project focuses on the complete development lifecycle, from initial design and simulation to the physical implementation and control of the robotic arm, making it suitable for rapid prototyping, research, and light-duty material handling applications.
 
+![alt text](https://github.com/Prabath-Ranathunga/5-DOF-Robotc-Manipulator/tree/main//common/images/final_v44.png "Robot final prototype design")
+
 ## Little bit about project:
 The development of a 5-DOF robotic manipulator, designed for versatility and precision in a compact form factor. The project encompasses the mechanical design using 3D-printed components to keep the manufacturing cost of this as low as possible. The manipulator's performance is validated through extensive simulation and a physical prototype, demonstrating its capabilities in tasks such as pick-and-place operations and path following. The results establish it as a viable and accessible platform for academic research, educational purposes, and light-duty industrial automation.
 
@@ -24,9 +26,9 @@ guide rails and lead screw setup to drive the joint. `J-Axis` joint don’t have
 
 ## Configuration
 A modified version of Merlin 3D printer firmware for rotating bed based printers,[Marlin 360 Firmware](https://github.com/kory75/Marlin_360) was used to run the robot. Marlin firmware is mainly configured to 3-aixs 3D printers, To work with 5-axis manipulator, there have to do some configuration and modification to the firmware, Specifically both extruders were configured to run two rotary axis on tool head. The marlin firmware for polar coordinates works mainly with `X` and `Y` coordinates. The `Z` coordinates that receive from the G-code (Geometric Code) works independently with the `Z` axis. But the `X` and `Y` coordinates that the marlin firmware gets from the G-code sender is a cartesian coordinate system that represented by `X` and `Y` value. In the polar coordinating system using `𝑅_360(𝑋_𝐴𝑋𝐼𝑆)` and `𝑅(𝑌_𝐴𝑋𝐼𝑆)` coordinating values to move the axis motors and use to represent the `X` and `Y` cartesian coordinates.
-`R_360(𝑋_𝐴𝑋𝐼𝑆)` and `𝑅(𝑌_𝐴𝑋𝐼𝑆)` values are calculated from the cartesian coordinates, from a Gcode if needed. From the centre point of the working table or the bed of the machine `(x_0, y_0)` have to move at an angle of `$\alpha$` to and the tool head have to move a difference in the radial direction `R` the machine. from the current orientation to destination orientation, 
+`R_360(𝑋_𝐴𝑋𝐼𝑆)` and `𝑅(𝑌_𝐴𝑋𝐼𝑆)` values are calculated from the cartesian coordinates, from a Gcode if needed. From the centre point of the working table or the bed of the machine `(x_0, y_0)` have to move at an angle of $\alpha$ to and the tool head have to move a difference in the radial direction `R` the machine. from the current orientation to destination orientation, 
 
-**The angle difference `$\alpha$` can be get by,**\
+**The angle difference $\alpha$ can be get by,**\
 $`\alpha=\arctan\left(\frac{\text{destination}[Y]}{\text{destination}[X]}\right)-\arctan\left(\frac{\text{current}_{\text{cartesian}}[Y]}{\text{current}_{\text{cartesian}}[X]}\right)`$
 
 **Radial distance `x_diff` difference can get by,**\
