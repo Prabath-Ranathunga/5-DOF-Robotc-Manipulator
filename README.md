@@ -61,11 +61,11 @@ Simulation or sort of simulation(didn't go through simulations since already bui
 Most of the parts in the machine are done by 3D printing, considering the requirements such as strength, price and printerbility, PETG was a great choice. The hard part of printing or prototyping is the gear-drive parts, since those cycodial parts have tight tollarance had to pring over and over again to test best fit to archive zero play(or very close to) drive. Other than that its mostly fitting parts together with M3 nuts & bolts and bunch of heat inserts. 
 On final design there were vibrations in botton drive specially when arm is too far away from the center, one of the issue with lack of support on that radial axis and other one is bottom drive's bearing were also 3D printed ones, so its not a smooth ride even with lubrications. 
 
-<img src="common/images/prototype_img_01.png" alt="Robot final prototype image_01" width="400" />
-<img src="common/images/prototype_img_02.png" alt="Robot final prototype image_02" width="200" />
-<img src="common/images/prototype_img_03.png" alt="Robot final prototype image_03" width="200" />
-<img src="common/images/prototype_img_04.png" alt="Robot final prototype image_04" width="200" />
-<img src="common/images/prototype_img_05.png" alt="Robot final prototype image_05" width="200" />
+<img src="common/images/prototype_img_01.png" alt="Robot final prototype image_01" width="800" />
+<img src="common/images/prototype_img_02.png" alt="Robot final prototype image_02" width="300" >
+<img src="common/images/prototype_img_03.png" alt="Robot final prototype image_03" width="300" />
+<img src="common/images/prototype_img_04.png" alt="Robot final prototype image_04" width="300" >
+<img src="common/images/prototype_img_05.png" alt="Robot final prototype image_05" width="300" />
 
 ## License
 This publication is © 2022 [Prabath Ranathunga | ISSN 2961-502X].  
